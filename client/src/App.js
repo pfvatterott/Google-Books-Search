@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CustomNavBar from "./components/Navbar"
-import Books from "./pages/Books"
+import Search from "./pages/Search"
+import Saved from "./pages/Saved"
 import API from "./utils/API";
 import 'material-icons/iconfont/material-icons.css';
 import 'materialize-css';
@@ -9,12 +10,13 @@ import 'materialize-css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <div>
       <CustomNavBar />
-      <Books />
+      <Route exact path="/" component={Search} />
+      <Route exact path="/saved" component={Saved} />
     </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

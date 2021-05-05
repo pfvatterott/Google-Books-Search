@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import API from "../utils/API";
 import axios from "axios"
 
-function Books() {
+function Search() {
 
     useEffect(() => {
         searchForBook()
@@ -25,4 +25,4 @@ function Books() {
 
 }
 
-export default Books;
+export default Search;
