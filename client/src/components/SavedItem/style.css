@@ -1,0 +1,12 @@
+#saveButton {
+    margin: 10px;
+}
+
+#viewButton {
+    margin: 10px
+}
+
+.writtenBy {
+    font-weight: bold;
+    margin-bottom: 0;
+}
