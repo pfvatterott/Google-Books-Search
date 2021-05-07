@@ -24,7 +24,13 @@ io.on('connection', function(socket){
   });
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
