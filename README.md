@@ -1,29 +1,62 @@
-# Create React Express App
+<p align="center">
+<img src="./client/src/assets/images/logo.png">
+</p>
 
-## About This Boilerplate
+# Portfolio
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+This website's purpose is to demonstrate my abilities in creating a webpage while also showing the user my contact information and portfolio. This project was centered around ReactJS.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Description
 
-## Starting the app locally
+Some fun features of this website:
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+* A resume displayed as a png that is also downloadable as a pdf
+* A collapsible navbar for mobile browsing
+* Lots of FABs featuring Font Awesome Icons
+* Cards presenting my various projects
+* Hover effects
+* Tooltips for all buttons
 
-```
-npm install
-```
 
-This should install node modules within the server and the client folder.
+## Built With
+* [ReactJS](https://reactjs.org/)
+* [Materialize CSS](https://materializecss.com/)
+* [JQuery](https://jquery.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Favicon](https://favicon.io/)
+* [Animate on Scroll](https://michalsnik.github.io/aos/)
 
-After both installations complete, run the following command in your terminal:
 
-```
-npm start
-```
+## Link to Site
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+[Click to access the deployed site!](https://books-search-pfvatterott.herokuapp.com/)
 
-## Deployment (Heroku)
+## Screenshots
+![screenshot](./src/assets/images/screenshot1.png)
+<br></br><br></br>
+![site in action](./src/assets/images/screenshot2.png)
+<br></br><br></br>
+![graphs](./src/assets/images/screenshot3.png)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
+
+## Authors
+
+### Paul Vatterott
+[Github](https://github.com/pfvatterott) <br>
+Email: pfvatterott@gmail.com
+
+## License
+MIT License
+
+Copyright (c) 2021 Paul Vatterott
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+
