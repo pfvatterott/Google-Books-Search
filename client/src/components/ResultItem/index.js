@@ -4,11 +4,19 @@ import {Button} from "react-materialize"
 import "./style.css"
 
 export default function ResultItem(props) {
-    console.log(props)
+    function changeButtonColor(e) {
+        e.target.classList.add('disabled')
+    }
+
+    function processClickButton(e) {
+        e.target.classList.add('disabled')
+        props.saveBook(props.book.volumeInfo)
+    }
+    
     return (
         <li class="collection-item bookItem">
             <a href={props.book.volumeInfo.infoLink} target="_blank"><Button className="right" id="viewButton">View</Button></a>
-            <Button className="right" id="saveButton" onClick={() => props.saveBook(props.book.volumeInfo)}>Save</Button>
+            <Button className="right" id="saveButton" onClick={processClickButton}>Save</Button>
             <h5>{props.book.volumeInfo.title}</h5>
             <p className="writtenBy">Written by:</p>
                 <ul>

@@ -34,7 +34,7 @@ function Search() {
         searchForBook(formObject.search)
     }
 
-    function saveBook(book) {
+    function saveBook(book, e) {
         const bookData = {
             authors: book.authors,
             description: book.description,
@@ -42,8 +42,11 @@ function Search() {
             link: book.infoLink,
             title: book.title
         }
-        API.saveBook(bookData)
+        API.saveBook(bookData);
+        console.log(e)
     }
+
+
 
     
 
