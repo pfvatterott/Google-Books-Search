@@ -9,18 +9,21 @@ import axios from "axios"
 function Search() {
 
     const [books, setBooks] = useState([])
+    const [author, setAuthor] = useState([])
     const [formObject, setFormObject] = useState([])
-
-    useEffect(() => {
-         
-    }, [])
 
     const apiKey = "AIzaSyA3YInjAHayQeCJsguOiGtyPJB-MLm-K0k";
 
     function searchForBook(book) {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`)
         .then(response => {
-            setBooks(response.data.items)
+            console.log(response)
+            if (response.data.items.length === 0) {
+                alert('No results!')
+            }
+            else {
+                setBooks(response.data.items)
+            }
         }).catch(error => console.log(error))
     }
 
