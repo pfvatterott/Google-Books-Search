@@ -45,14 +45,12 @@ function Search() {
             link: book.infoLink,
             title: book.title
         }
-        API.saveBook(bookData);
-        console.log(e)
+        API.saveBook(bookData).then(
+            //Display to all users that the book was saved. 
+             window.M.toast({ html: `A new book titled '${bookData.title}' was saved!` })
+        )
     }
-
-
-
     
-
     return (
         <Section>
             <Row className="container">
