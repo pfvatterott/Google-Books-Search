@@ -22,11 +22,9 @@ function Saved() {
 
    function deleteBook(id) {
         API.deleteBook(id)
-    .then(res => loadBooks())
-    .catch(err => console.log(err));
+        .then(res => loadBooks())
+        .catch(err => console.log(err));
     }
-
-   console.log(savedBooks)
 
     return (
         <Section>

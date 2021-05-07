@@ -12,7 +12,7 @@ function Search() {
     const [formObject, setFormObject] = useState([])
 
     useEffect(() => {
-        searchForBook() 
+         
     }, [])
 
     const apiKey = "AIzaSyA3YInjAHayQeCJsguOiGtyPJB-MLm-K0k";
@@ -20,21 +20,32 @@ function Search() {
     function searchForBook(book) {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`)
         .then(response => {
-            console.log(response.data)
+            setBooks(response.data.items)
         }).catch(error => console.log(error))
     }
 
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({...formObject, search: value})
-        console.log(formObject)
     };
 
     function handleFormSubmit(event) {
         event.preventDefault()
-        console.log(formObject)
         searchForBook(formObject.search)
     }
+
+    function saveBook(book) {
+        const bookData = {
+            authors: book.authors,
+            description: book.description,
+            image: book.imageLinks.thumbnail,
+            link: book.infoLink,
+            title: book.title
+        }
+        API.saveBook(bookData)
+    }
+
+    
 
     return (
         <Section>
@@ -56,7 +67,9 @@ function Search() {
             <Row className="container">
                 <Col s={12}>
                     <ResultList>
-                        <ResultItem />
+                        {books.map(book => (
+                          <ResultItem book={book} saveBook={saveBook}/>  
+                        ))}
                     </ResultList>
                 </Col>
             </Row>

@@ -9,7 +9,7 @@ export default function SavedItem(props) {
 
     
     return (
-        <li class="collection-item">
+        <li class="collection-item bookItem">
             <Button className="right" id="viewButton" href={props.bookData.link}>View</Button>
             <Button className="right" id="deleteButton" onClick={() => props.deleteBook(props.bookData._id)}>Delete</Button>
             <h5>{props.bookData.title}</h5>
@@ -19,7 +19,7 @@ export default function SavedItem(props) {
                         <li>{author}</li>
                     ))}
                 </ul>
-            <img src={exampleImage} className="left"></img>
+            <img src={props.bookData.image} className="left bookThumbnail"></img>
             <br></br>
             <p>{props.bookData.description}</p>
             <br></br>
