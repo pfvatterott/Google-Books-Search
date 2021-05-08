@@ -5,7 +5,7 @@ import ResultList from "../components/ResultList"
 import ResultItem from "../components/ResultItem"
 import API from "../utils/API";
 import axios from "axios"
-const apiKey = process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_API_KEY || process.env.API_KEY
 
 
 function Search() {
