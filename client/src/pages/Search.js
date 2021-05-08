@@ -5,7 +5,11 @@ import ResultList from "../components/ResultList"
 import ResultItem from "../components/ResultItem"
 import API from "../utils/API";
 import axios from "axios"
-const apiKey = process.env.API_KEY || process.env.REACT_APP_API_KEY
+const aws = require('aws-sdk')
+let s3 = new aws.S3({
+    apiKeyHeroku: process.env.apiKey
+})
+const apiKey = s3.apiKeyHeroku || process.env.REACT_APP_API_KEY
 
 
 function Search() {
@@ -14,6 +18,7 @@ function Search() {
     const [formObject, setFormObject] = useState([])
 
     console.log("apikey = " + process.env.API_KEY)
+    console.log("reactkey = " + process.env.REACT_APP_API_KEY )
 
 
     function searchForBook(book) {
