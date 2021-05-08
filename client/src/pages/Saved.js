@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TextInput, Row, Col, Button} from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import Section from "../components/Section"
 import ResultList from "../components/ResultList"
 import SavedItem from "../components/SavedItem"

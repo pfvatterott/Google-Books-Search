@@ -1,8 +1,7 @@
 import React from 'react'
-import exampleImage from "../../assets/images/logo.png"
 import {Button} from "react-materialize"
 import "./style.css"
-import API from "../../utils/API"
+
 
 
 export default function SavedItem(props) {

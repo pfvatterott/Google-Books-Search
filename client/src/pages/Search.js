@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { TextInput, Row, Col, Button} from 'react-materialize';
 import Section from "../components/Section"
 import ResultList from "../components/ResultList"
@@ -11,7 +11,6 @@ const apiKey = process.env.REACT_APP_API_KEY
 function Search() {
 
     const [books, setBooks] = useState([])
-    const [author, setAuthor] = useState([])
     const [formObject, setFormObject] = useState([])
 
 
@@ -29,7 +28,7 @@ function Search() {
     }
 
     function handleInputChange(event) {
-        const { name, value } = event.target;
+        const { value } = event.target;
         setFormObject({...formObject, search: value})
     };
 
