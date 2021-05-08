@@ -18,11 +18,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 io.on('connection', function(socket){
+  socket.send("Hello!");
   console.log("User connected");
   socket.on('message', function(msg){
     io.emit('message', msg);
   });
 });
+
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
 {

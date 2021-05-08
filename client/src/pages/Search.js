@@ -5,6 +5,8 @@ import ResultList from "../components/ResultList"
 import ResultItem from "../components/ResultItem"
 import API from "../utils/API";
 import axios from "axios"
+const apiKey = process.env.REACT_APP_API_KEY
+
 
 function Search() {
 
@@ -12,7 +14,6 @@ function Search() {
     const [author, setAuthor] = useState([])
     const [formObject, setFormObject] = useState([])
 
-    const apiKey = "AIzaSyA3YInjAHayQeCJsguOiGtyPJB-MLm-K0k";
 
     function searchForBook(book) {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`)
