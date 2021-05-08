@@ -18,9 +18,6 @@ function Search() {
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState([])
 
-    console.log("apikey = " + process.env.API_KEY)
-    console.log("reactkey = " + process.env.REACT_APP_API_KEY )
-
 
     function searchForBook(book) {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`)
