@@ -10,7 +10,6 @@ export default function ResultItem(props) {
     }
 
     function renderAuthors(authors) {
-        console.log(authors)
         if (!authors) {
             return ('None')
         }
