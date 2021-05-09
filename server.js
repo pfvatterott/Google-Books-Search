@@ -32,10 +32,10 @@ io.on('connection', function(socket) {
   })
 })
 
-http.listen(PORT, function() {
-  console.log('listening on 4000')
-})
+// http.listen(PORT, function() {
+//   console.log('listening on 4000')
+// })
 
-// app.listen(PORT, () => {
-//   console.log(`🌎 ==> API server now on port ${PORT}!`);
-// });
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
