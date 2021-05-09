@@ -1,11 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const routes = require("./routes");
-const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-var http = require("http").Server(app);
-const io = require("socket.io")(http);
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,15 +16,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-io.on('connection', function(socket){
-  socket.send("Hello!");
-  console.log("User connected");
-  socket.on('message', function(msg){
-    io.emit('message', msg);
-  });
-});
-
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
 {
   useNewUrlParser: true,
@@ -34,6 +24,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
   useFindAndModify: false
 });
 
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+io.on('connection', function(socket) {
+  socket.on('bookSavedNotification', function(data) {
+    io.emit('bookSavedNotification', data)
+  })
+})
+
+http.listen(PORT, function() {
+  console.log('listening on 4000')
+})
+
+// app.listen(PORT, () => {
+//   console.log(`🌎 ==> API server now on port ${PORT}!`);
+// });

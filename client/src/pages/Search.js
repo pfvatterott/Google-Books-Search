@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextInput, Row, Col, Button} from 'react-materialize';
 import Section from "../components/Section"
 import ResultList from "../components/ResultList"
 import ResultItem from "../components/ResultItem"
 import API from "../utils/API";
+import io from 'socket.io-client'
 import axios from "axios"
 const aws = require('aws-sdk')
+
+
 let s3 = new aws.S3({
     apiKeyHeroku: process.env.apiKey
 })
 const apiKey = s3.apiKeyHeroku || process.env.REACT_APP_API_KEY
-
+const socket = io('http://localhost:3000')
 
 
 function Search() {
+
+    useEffect(() => {
+        socket.on('bookSavedNotification', (bookName) => {
+          window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+        })
+    }, [])
 
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState([])
@@ -52,7 +61,7 @@ function Search() {
         }
         API.saveBook(bookData).then(
             //Display to all users that the book was saved. 
-             window.M.toast({ html: `A new book titled '${bookData.title}' was saved!` })
+            socket.emit('bookSavedNotification', (bookData.title))
         )
     }
     

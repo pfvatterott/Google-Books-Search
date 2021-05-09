@@ -4,6 +4,10 @@ import Section from "../components/Section"
 import ResultList from "../components/ResultList"
 import SavedItem from "../components/SavedItem"
 import API from "../utils/API"
+import io from 'socket.io-client'
+
+
+const socket = io('http://localhost:3000')
 
 
 function Saved() {
@@ -12,7 +16,11 @@ function Saved() {
 
    useEffect(() => {
         loadBooks()
+        socket.on('bookSavedNotification', (bookName) => {
+            window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+          })
    }, [])
+
 
    function loadBooks() {
         API.getBooks().then(res => 
