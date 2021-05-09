@@ -7,7 +7,7 @@ import API from "../utils/API"
 import io from 'socket.io-client'
 
 
-const socket = io(process.env.PORT || 'http://localhost:3000')
+const socket = io()
 
 function Saved() {
 
