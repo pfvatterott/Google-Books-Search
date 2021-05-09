@@ -2,29 +2,32 @@
 <img src="./client/src/assets/images/logo.png">
 </p>
 
-# Portfolio
+# Google Books Search
 
-This website's purpose is to demonstrate my abilities in creating a webpage while also showing the user my contact information and portfolio. This project was centered around ReactJS.
-
-## Description
-
-Some fun features of this website:
-
-* A resume displayed as a png that is also downloadable as a pdf
-* A collapsible navbar for mobile browsing
-* Lots of FABs featuring Font Awesome Icons
-* Cards presenting my various projects
-* Hover effects
-* Tooltips for all buttons
-
+Another React website! This project is my first full stack react web application. The user can search for a book using the Google Book API and be presented a list of book titles, images, authors, and a description. Then the user can save the books to a database for later use.
 
 ## Built With
 * [ReactJS](https://reactjs.org/)
 * [Materialize CSS](https://materializecss.com/)
-* [JQuery](https://jquery.com/)
-* [Font Awesome](https://fontawesome.com/)
-* [Favicon](https://favicon.io/)
-* [Animate on Scroll](https://michalsnik.github.io/aos/)
+* [Google Books API](https://developers.google.com/books)
+* [ExpressJS](https://expressjs.com/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [MongooseJS](https://mongoosejs.com/)
+* [MongoDB](https://www.mongodb.com/)
+
+# Table of Contents
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [License](#License)
+  4. [Contributing](#Contributing)
+  6. [Questions](#Questions)
+
+  ## Installation
+  Clone this repository, make sure to install all npm dependencies by running "npm i" in your terminal then run "npm start".
+
+  ## Usage
+  If you would like to try out a live version of the website click the link below.
+
 
 
 ## Link to Site
@@ -32,11 +35,10 @@ Some fun features of this website:
 [Click to access the deployed site!](https://books-search-pfvatterott.herokuapp.com/)
 
 ## Screenshots
-![screenshot](./src/assets/images/screenshot1.png)
+![screenshot](./client/src/assets/images/screenshot1.png)
 <br></br><br></br>
-![site in action](./src/assets/images/screenshot2.png)
-<br></br><br></br>
-![graphs](./src/assets/images/screenshot3.png)
+![screenshot](./client/src/assets/images/screenshot2.png)
+
 
 
 
@@ -57,6 +59,14 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+  ## Contributing
+  Please feel free to contribute! Reach out to me through my email or Github listed below
+
+  ## Questions
+
+  If you have any questions please reach out through email or Github. <br>
+  My email is pfvatterott@gmail.com <br>
+  My Github can be accessed [here](https://github.com/pfvatterott)
 
 
 
