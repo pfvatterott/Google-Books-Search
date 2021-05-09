@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
   useFindAndModify: false
 });
 
-const http = require('http').Server(app)
+const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
 io.on('connection', function(socket) {
