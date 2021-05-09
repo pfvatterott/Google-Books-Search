@@ -7,8 +7,8 @@ import API from "../utils/API"
 import io from 'socket.io-client'
 
 
-const socket = io(process.env.PORT ||
-    'http://localhost:3000')
+// const socket = io(process.env.PORT ||
+//     'http://localhost:3000')
 
 function Saved() {
 
@@ -16,9 +16,9 @@ function Saved() {
 
    useEffect(() => {
         loadBooks()
-        socket.on('bookSavedNotification', (bookName) => {
-            window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
-          })
+        // socket.on('bookSavedNotification', (bookName) => {
+        //     window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+        //   })
    }, [])
 
 

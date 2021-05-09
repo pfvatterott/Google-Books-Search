@@ -14,17 +14,17 @@ let s3 = new aws.S3({
     apiKeyHeroku: process.env.apiKey
 })
 const apiKey = s3.apiKeyHeroku || process.env.REACT_APP_API_KEY
-const socket = io(process.env.PORT ||
-    'http://localhost:3000')
+// const socket = io(process.env.PORT ||
+//     'http://localhost:3000')
 
 
 function Search() {
 
-    useEffect(() => {
-        socket.on('bookSavedNotification', (bookName) => {
-          window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
-        })
-    }, [])
+    // useEffect(() => {
+    //     socket.on('bookSavedNotification', (bookName) => {
+    //       window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+    //     })
+    // }, [])
 
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState([])
@@ -63,7 +63,7 @@ function Search() {
         }
         API.saveBook(bookData).then(
             //Display to all users that the book was saved. 
-            socket.emit('bookSavedNotification', (bookData.title))
+            // socket.emit('bookSavedNotification', (bookData.title))
         )
     }
     
