@@ -9,11 +9,13 @@ import axios from "axios"
 const aws = require('aws-sdk')
 
 
+
 let s3 = new aws.S3({
     apiKeyHeroku: process.env.apiKey
 })
 const apiKey = s3.apiKeyHeroku || process.env.REACT_APP_API_KEY
-const socket = io('http://localhost:3000')
+const socket = io(process.env.PORT ||
+    'http://localhost:3000')
 
 
 function Search() {

@@ -3,8 +3,7 @@ const mongoose = require("mongoose")
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const http = require('http').Server(app)
-const io = require('socket.io')(http)
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +22,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
   useCreateIndex: true,
   useFindAndModify: false
 });
+
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 
 io.on('connection', function(socket) {
   socket.on('bookSavedNotification', function(data) {
