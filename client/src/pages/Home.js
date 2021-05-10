@@ -5,7 +5,7 @@ import io from 'socket.io-client'
 
 const socket = io()
 
-function Saved() {
+function Home() {
 
    useEffect(() => {
         // listener for book saved and executes toast notification
@@ -64,4 +64,4 @@ function Saved() {
 
 }
 
-export default Saved;
+export default Home;
