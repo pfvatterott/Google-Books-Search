@@ -6,7 +6,7 @@
 
 Another React website! This project is my first full stack react web application. The user can search for a book using the Google Book API and be presented a list of book titles, images, authors, and a description. Then the user can save the books to a database for later use.
 
-This project also uses [Socket.io](https://socket.io/) to alert all users across different windows when a book has been saved.
+This project also uses [Socket.io](https://socket.io/) to alert all users across different windows when a book has been saved or deleted.
 
 ## Built With
 * [ReactJS](https://reactjs.org/)

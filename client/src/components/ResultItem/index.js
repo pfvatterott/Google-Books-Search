@@ -4,11 +4,13 @@ import "./style.css"
 
 export default function ResultItem(props) {
 
+    // if save button pressed disable it
     function processClickButton(e) {
         e.target.classList.add('disabled')
         props.saveBook(props.book.volumeInfo)
     }
 
+    // lists authors depending on amount of authors
     function renderAuthors(authors) {
         if (!authors) {
             return ('None')
@@ -29,7 +31,6 @@ export default function ResultItem(props) {
         }
     }
 
-    
     return (
         <li class="collection-item bookItem">
             <a href={props.book.volumeInfo.infoLink} target="_blank"><Button className="right" id="viewButton">View</Button></a>

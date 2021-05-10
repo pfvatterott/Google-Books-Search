@@ -23,19 +23,21 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/books",
   useFindAndModify: false
 });
 
+// Socket.io setup
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
+// On connection, listen for 'bookSavedNotification' or 'bookDeleteNotification' then emit alert to run notification
 io.on('connection', function(socket) {
   socket.on('bookSavedNotification', function(data) {
     io.emit('bookSavedNotification', data)
+  })
+  
+  socket.on('bookDeletedNotification', function(data) {
+    io.emit('bookDeletedNotification', data)
   })
 })
 
 http.listen(PORT, function() {
   console.log('listening on 4000')
 })
-
-// app.listen(PORT, () => {
-//   console.log(`🌎 ==> API server now on port ${PORT}!`);
-// });

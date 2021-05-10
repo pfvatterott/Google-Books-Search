@@ -6,8 +6,8 @@ import "./style.css"
 
 export default function SavedItem(props) {
 
+    // lists authors depending on amount of authors
     function renderAuthors(authors) {
-        console.log(authors)
         if (authors.length === 0) {
             return ('None')
         }
@@ -30,7 +30,7 @@ export default function SavedItem(props) {
     return (
         <li class="collection-item bookItem">
             <a href={props.bookData.link} target="_blank"><Button className="right" id="viewButton">View</Button></a>
-            <Button className="right" id="deleteButton" onClick={() => props.deleteBook(props.bookData._id)}>Delete</Button>
+            <Button className="right" id="deleteButton" onClick={() => props.deleteBook(props.bookData)}>Delete</Button>
             <h5>{props.bookData.title}</h5>
             <p className="writtenBy">Written by: </p><p>{renderAuthors(props.bookData.authors)}</p>
             <img src={props.bookData.image} className="left bookThumbnail"></img>

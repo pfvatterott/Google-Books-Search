@@ -20,15 +20,20 @@ const socket = io()
 function Search() {
 
     useEffect(() => {
+        // listener for book saved and executes toast notification
         socket.on('bookSavedNotification', (bookName) => {
           window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
         })
+        // listener for book deleted and executes toast notification
+        socket.on('bookDeletedNotification', (bookName) => {
+            window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
+          })
     }, [])
 
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState([])
 
-
+    // Api call to Google Books when search button clicked
     function searchForBook(book) {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`)
         .then(response => {
@@ -42,16 +47,19 @@ function Search() {
         }).catch(error => console.log(error))
     }
 
+    // set formObject state when user typing
     function handleInputChange(event) {
         const { value } = event.target;
         setFormObject({...formObject, search: value})
     };
 
+    // search for book using formObject state
     function handleFormSubmit(event) {
         event.preventDefault()
         searchForBook(formObject.search)
     }
 
+    // save book data to mongodb and emit notification that book saved
     function saveBook(book, e) {
         const bookData = {
             authors: book.authors,
@@ -61,7 +69,6 @@ function Search() {
             title: book.title
         }
         API.saveBook(bookData).then(
-            //Display to all users that the book was saved. 
             socket.emit('bookSavedNotification', (bookData.title))
         )
     }

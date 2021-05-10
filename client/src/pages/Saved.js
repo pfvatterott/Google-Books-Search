@@ -15,22 +15,30 @@ function Saved() {
 
    useEffect(() => {
         loadBooks()
+        // listener for book saved and executes toast notification
         socket.on('bookSavedNotification', (bookName) => {
             window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
           })
+        // listener for book deleted and executes toast notification
+        socket.on('bookDeletedNotification', (bookName) => {
+            window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
+        })
    }, [])
 
-
+    // load list of books from mongodb
    function loadBooks() {
         API.getBooks().then(res => 
             setSavedBooks(res.data)
         ).catch(err => console.log(err))
    }
-
-   function deleteBook(id) {
-        API.deleteBook(id)
+    //  delete from mongodb then send emitter for toast notification
+   function deleteBook(bookData) {
+        API.deleteBook(bookData._id)
         .then(res => loadBooks())
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)).then(
+            socket.emit('bookDeletedNotification', (bookData.title))
+
+        );
     }
 
     return (
