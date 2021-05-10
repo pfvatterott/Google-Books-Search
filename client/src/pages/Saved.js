@@ -18,6 +18,7 @@ function Saved() {
         // listener for book saved and executes toast notification
         socket.on('bookSavedNotification', (bookName) => {
             window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+            loadBooks()
           })
         // listener for book deleted and executes toast notification
         socket.on('bookDeletedNotification', (bookName) => {
