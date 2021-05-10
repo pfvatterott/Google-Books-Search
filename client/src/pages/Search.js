@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { TextInput, Row, Col, Button} from 'react-materialize';
 import Section from "../components/Section"
 import ResultList from "../components/ResultList"
@@ -9,7 +9,6 @@ import axios from "axios"
 const aws = require('aws-sdk')
 
 
-
 let s3 = new aws.S3({
     apiKeyHeroku: process.env.apiKey
 })
@@ -18,19 +17,6 @@ const socket = io()
 
 
 function Search() {
-
-    useEffect(() => {
-        // listener for book saved and executes toast notification
-        // socket.on('bookSavedNotification', (bookName) => {
-        //     window.M.Toast.dismissAll()
-        //     window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
-        // })
-        // // listener for book deleted and executes toast notification
-        // socket.on('bookDeletedNotification', (bookName) => {
-        //     window.M.Toast.dismissAll()
-        //     window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
-        //   })
-    }, [])
 
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState([])

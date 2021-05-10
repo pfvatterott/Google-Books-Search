@@ -6,7 +6,6 @@ import SavedItem from "../components/SavedItem"
 import API from "../utils/API"
 import io from 'socket.io-client'
 
-
 const socket = io()
 
 function Saved() {
@@ -15,7 +14,7 @@ function Saved() {
 
    useEffect(() => {
         loadBooks()
-        // listener for book saved and executes toast notification
+        // listener for book saved with socketIO
         socket.on('bookSavedNotification', (bookName) => {
             loadBooks()
           })
