@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAIA,sCACI,WACJ,CAEA,WACI,eAAiB,CACjB,eACJ,CAEA,UACI,gBACJ,CAEA,eAEI,wBAAe,CACf,gBACJ,CArBA,QACI,iBAAkB,CAClB,SACJ","file":"main.13612aaa.chunk.css","sourcesContent":[".footer {\n    position: relative;\n    top: 500px;\n}"]}
