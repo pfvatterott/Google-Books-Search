@@ -7,18 +7,18 @@ const socket = io()
 
 function Home() {
 
-   useEffect(() => {
-        // listener for book saved and executes toast notification
-        socket.on('bookSavedNotification', (bookName) => {
-            window.M.Toast.dismissAll()
-            window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
-          })
-        // listener for book deleted and executes toast notification
-        socket.on('bookDeletedNotification', (bookName) => {
-            window.M.Toast.dismissAll()
-            window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
-        })
-   }, [])
+//    useEffect(() => {
+//         // listener for book saved and executes toast notification
+//         socket.on('bookSavedNotification', (bookName) => {
+//             window.M.Toast.dismissAll()
+//             window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
+//           })
+//         // listener for book deleted and executes toast notification
+//         socket.on('bookDeletedNotification', (bookName) => {
+//             window.M.Toast.dismissAll()
+//             window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
+//         })
+//    }, [])
 
 
     return (

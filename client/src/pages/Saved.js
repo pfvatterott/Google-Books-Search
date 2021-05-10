@@ -17,15 +17,8 @@ function Saved() {
         loadBooks()
         // listener for book saved and executes toast notification
         socket.on('bookSavedNotification', (bookName) => {
-            window.M.Toast.dismissAll()
-            window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
             loadBooks()
           })
-        // listener for book deleted and executes toast notification
-        socket.on('bookDeletedNotification', (bookName) => {
-            window.M.Toast.dismissAll()
-            window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
-        })
    }, [])
 
     // load list of books from mongodb
