@@ -25,14 +25,14 @@ export default function CustomNavBar() {
             sidenav={
                 <div className="left-align">
                 <ul class="side-nav" id="mobile-menu">
-                    <li><Link to="/">Search for Books</Link></li>
+                    <li><Link to="/search">Search for Books</Link></li>
                     <li><Link to="/saved">Saved Books</Link></li>
                 </ul>
                 </div>
             }
             >
             <NavItem >
-                <Link to="/">Search for Books</Link>
+                <Link to="/search">Search for Books</Link>
             </NavItem>
             <NavItem>
                 <Link to="/saved">Saved Books</Link>
