@@ -22,20 +22,10 @@ function Search() {
     useEffect(() => {
         // listener for book saved and executes toast notification
         socket.on('bookSavedNotification', (bookName) => {
-            if (document.querySelector('.toast')) {
-                const toastElement = document.querySelector('.toast');
-                const toastInstance = window.M.Toast.getInstance(toastElement)
-                toastInstance.dismiss()
-            }
             window.M.toast({ html: `A new book titled '${bookName}' was saved!` })
         })
         // listener for book deleted and executes toast notification
         socket.on('bookDeletedNotification', (bookName) => {
-            if (document.querySelector('.toast')) {
-                const toastElement = document.querySelector('.toast');
-                const toastInstance = window.M.Toast.getInstance(toastElement)
-                toastInstance.dismiss()
-            }
             window.M.toast({ html: `A new book titled '${bookName}' was Deleted!` })
           })
     }, [])
@@ -78,9 +68,8 @@ function Search() {
             link: book.infoLink,
             title: book.title
         }
-        API.saveBook(bookData).then(
-            socket.emit('bookSavedNotification', (bookData.title))
-        )
+        socket.emit('bookSavedNotification', (bookData.title))
+        API.saveBook(bookData)
     }
     
     return (
